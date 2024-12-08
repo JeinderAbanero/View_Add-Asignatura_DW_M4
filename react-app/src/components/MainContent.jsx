@@ -1,11 +1,11 @@
+// src/components/MainContent.jsx
 import React from "react";
-import FormAsignatura from "./FormAsignatura";
+import SubjectForm from "./FormAsignatura";
 
 const MainContent = ({ formData, profesores, handleChange, handleSubmit }) => {
   return (
     <main className="main-content">
-      <h1>Agregar nueva asignatura</h1>
-      <FormAsignatura
+      <SubjectForm
         formData={formData}
         profesores={profesores}
         handleChange={handleChange}

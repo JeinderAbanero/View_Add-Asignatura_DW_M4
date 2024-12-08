@@ -1,7 +1,8 @@
+// src/App.jsx
 import React, { useState } from "react";
-import "./App.css";
 import Sidebar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
+import "./App.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(true);
@@ -30,7 +31,19 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos enviados:", formData);
+    let isValid = true;
+
+    for (const field in formData) {
+      if (!validateField(field, formData[field])) {
+        isValid = false;
+        alert(`El campo ${field} no es válido`);
+        break;
+      }
+    }
+
+    if (isValid) {
+      console.log("Datos enviados:", formData);
+    }
   };
 
   const toggleMenu = () => setMenuOpen(!menuOpen);

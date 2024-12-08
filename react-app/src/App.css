@@ -1,5 +1,6 @@
 /* Estilos generales */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -10,6 +11,11 @@ body, html {
   display: flex;
   height: 100%;
   transition: margin-left 0.3s ease, padding-left 0.3s ease;
+}
+
+.title {
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .sidebar {
@@ -57,7 +63,7 @@ body, html {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  z-index: 11; 
+  z-index: 11;
 }
 
 .bar {
@@ -93,7 +99,7 @@ nav ul li svg {
 
 /* Estilo de los íconos solo cuando el menú está cerrado */
 .menu-closed nav ul li span {
-  display: none; 
+  display: none;
 }
 
 .menu-closed nav ul li svg {
@@ -112,7 +118,7 @@ nav ul li svg {
 }
 
 .menu-open .main-content {
-  margin-left: 100px;  /* Desplazamos el contenido hacia la derecha cuando el menú está abierto */
+  margin-left: 100px; /* Desplazamos el contenido hacia la derecha cuando el menú está abierto */
   padding-left: 270px; /* Asegura que el contenido no se solape con el menú */
 }
 
@@ -121,6 +127,23 @@ nav ul li svg {
 }
 
 /* Estilos del formulario */
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.card h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+}
+
 .form label {
   display: block;
   margin-bottom: 10px;
@@ -129,11 +152,25 @@ nav ul li svg {
 .form input,
 .form select,
 .form textarea {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 5px 0 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.small-input {
+  width: calc(33.33% - 10px); /* Dividimos el espacio para tres campos */
+  padding: 10px;
+  margin: 5px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 button {
@@ -143,6 +180,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
 button:hover {
