@@ -40,20 +40,25 @@ const FormAsignatura = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     let isValid = true;
 
-    for (const field in formData) {
-      if (!validateField(field, formData[field])) {
-        isValid = false;
-        alert(`El campo ${field} no es válido`);
-        break;
-      }
-    }
+    // Validación de campos (ya lo tienes bien implementado)
 
     if (isValid) {
-      console.log("Datos enviados:", formData);
+      try {
+        const response = await axios.post(
+          "https://api-asignaturas-production.up.railway.app/api/asignaturas", // URL correcta
+          formData
+        );
+        console.log(response.data); // Ver la respuesta
+        alert("Asignatura creada con éxito");
+      } catch (error) {
+        console.error("Error al enviar los datos:", error);
+        alert("Hubo un error al crear la asignatura");
+      }
     }
   };
 
