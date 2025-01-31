@@ -51,7 +51,7 @@ const FormAsignatura = () => {
     if (isValid) {
       try {
         const response = await axios.post(
-          "https://api-asignaturas-production.up.railway.app/api/asignaturas", // URL correcta
+          process.env.REACT_APP_API_URL,
           formData
         );
         console.log(response.data); // Ver la respuesta
